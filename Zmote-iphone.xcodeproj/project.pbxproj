@@ -156,7 +156,6 @@
 		D1132E98166B47D3008AB231 /* selectedtab_s@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "selectedtab_s@2x.png"; sourceTree = "<group>"; };
 		D1DBAC63166C1C0D00EC1E26 /* Zmote-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Zmote-Info.plist"; sourceTree = "<group>"; };
 		D2AAC07E0554694100DB518D /* libBCTabBarController.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libBCTabBarController.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		D352977312856A9F00CC4AE1 /* Readme.markdown */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Readme.markdown; sourceTree = "<group>"; };
 		D35297801285834A00CC4AE1 /* UINavigationController+icons.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+icons.h"; sourceTree = "<group>"; };
 		D35297811285834A00CC4AE1 /* UINavigationController+icons.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+icons.m"; sourceTree = "<group>"; };
 		D3B2F6BE12855CAC0089B15B /* prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = prefix.pch; sourceTree = "<group>"; };
@@ -228,7 +227,6 @@
 				D3B2F77D12855E4B0089B15B /* example */,
 				0867D69AFE84028FC02AAC07 /* Frameworks */,
 				034768DFFF38A50411DB9C8B /* Products */,
-				D352977312856A9F00CC4AE1 /* Readme.markdown */,
 				D1132E51166B46FD008AB231 /* RCCommand-zenterio.h */,
 				D1132E52166B46FD008AB231 /* RCCommand-zenterio.m */,
 				D1132E53166B46FD008AB231 /* VRemoteControlImpl.h */,
