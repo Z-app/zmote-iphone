@@ -271,8 +271,8 @@
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
-    [remoteControl getCurrentChannel];
-    volumeSlider.value = [remoteControl getVolume];
+//    [remoteControl getCurrentChannel];
+//    volumeSlider.value = [remoteControl getVolume];
 //    [self updater];
     NSLog(@"viewDidAppear");
 }
@@ -290,7 +290,7 @@
 
 /* To remove the keyboard when pressing outside the text field */
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
-    NSLog(@"touchesBegan:withEvent:");
+//    NSLog(@"touchesBegan:withEvent:");
     [self.view endEditing:YES];
     [remoteControl setIPAddress:STBIPaddress.text];
     [super touchesBegan:touches withEvent:event];

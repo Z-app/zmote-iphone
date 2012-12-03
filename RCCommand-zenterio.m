@@ -13,8 +13,8 @@
 -(RCCommand_zenterio*) init {
     if (self) {
 //        IPAddr = @"130.236.248.227";
-//        IPAddr = @"130.236.248.227";
-        IPAddr = @"192.168.0.198";
+        IPAddr = @"130.236.248.226";
+//        IPAddr = @"192.168.0.198";
         return self;
     }
     return nil;
@@ -40,8 +40,8 @@
 /* returns the EPG as a JSON object. For finding the channels. */
 -(NSDictionary*) getEPG {
     NSMutableString* url = [NSMutableString stringWithFormat:@"http://"];
-//    [url appendString:@"130.236.248.226"];
-    [url appendString:IPAddr];
+    [url appendString:@"130.236.248.226"];
+//    [url appendString:IPAddr];
     [url appendString:@"/mdio/epg.php"];
     
     NSURL *jsonUrl = [NSURL URLWithString:url];
@@ -143,7 +143,7 @@
 }
 
 -(void) setIPAddress: (NSString*) IPAddress {
-    NSLog(@"IPAddress = %@", IPAddress);
+//    NSLog(@"IPAddress = %@", IPAddress);
     IPAddr = IPAddress;
 }
 
