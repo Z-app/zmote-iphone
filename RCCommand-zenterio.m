@@ -7,27 +7,21 @@
 //
 
 #import "RCCommand-zenterio.h"
-
+/* Implementation of all functions that connects with the actual box. */
 @implementation RCCommand_zenterio
 
 -(RCCommand_zenterio*) init {
     if (self) {
-//        IPAddr = @"130.236.248.227";
-        IPAddr = @"130.236.248.226";
-//        IPAddr = @"192.168.0.198";
+        IPAddr = @"130.236.248.226"; // The default IP of a box.
         return self;
     }
     return nil;
 }
 
-// Random URL request. Test function
+// Random URL request. Test function. Is not used.
 - (void) URLRequest: (NSString*) url {
-    
     NSURL *urlTemp = [[NSURL alloc] initWithString:url];
-    
-    NSLog(@"%@",url);
     NSString* response = [[NSString alloc] initWithData:[NSData dataWithContentsOfURL:urlTemp] encoding:NSUTF8StringEncoding];
-    NSLog(@"%@", response);
 
 }
 
@@ -40,35 +34,30 @@
 /* returns the EPG as a JSON object. For finding the channels. */
 -(NSDictionary*) getEPG {
     NSMutableString* url = [NSMutableString stringWithFormat:@"http://"];
-    [url appendString:@"130.236.248.226"];
-//    [url appendString:IPAddr];
+    [url appendString:IPAddr];
     [url appendString:@"/mdio/epg.php"];
     
     NSURL *jsonUrl = [NSURL URLWithString:url];
-    
-    NSError *error = nil; // ??
+    NSError *error = nil;
     NSData *jsonData = [NSData dataWithContentsOfURL:jsonUrl options:kNilOptions error:&error];
     NSMutableDictionary *jsonResponse = [NSJSONSerialization JSONObjectWithData:jsonData options:NSJSONReadingAllowFragments error:&error];
-    
     if ([NSJSONSerialization isValidJSONObject:jsonResponse]) {
         NSMutableDictionary *jsonResponse = [NSJSONSerialization
                                              JSONObjectWithData:jsonData options:NSJSONReadingAllowFragments error:&error];
         return jsonResponse;
-        
     }
     NSLog(@"Not a valid JSON Object");
     return nil;
 }
 
-/* Returns volume or 0 for mute */
+/* Returns volume or 0 for mute. */
 - (NSInteger) getVolume {
     NSMutableString* url = [NSMutableString stringWithFormat:@"http://"];
-//    [url appendString:@"130.236.248.226"];
     [url appendString:IPAddr];
     [url appendString:@"/mdio/volume"];
     
     NSURL *jsonUrl = [NSURL URLWithString:url];
-    NSError *error = nil; // ??
+    NSError *error = nil;
     NSData *jsonData = [NSData dataWithContentsOfURL:jsonUrl options:kNilOptions error:&error];
     NSMutableDictionary *jsonResponse = [NSJSONSerialization JSONObjectWithData:jsonData options:NSJSONReadingAllowFragments error:&error];
 
@@ -78,7 +67,7 @@
     return [[jsonResponse objectForKey:@"volume"] intValue];
 }
 
-/* Sends a HTTP Request. Is not finished. */
+/* Sends a HTTP Request. */
 -(void) sendRequest: (NSString*) command {
     dispatch_queue_t queue = dispatch_queue_create("com.yourdomain.yourappname", NULL);
     dispatch_async(queue, ^{
@@ -98,7 +87,6 @@
             NSLog(@"Error sending command %@ to the url %@.", command, url);
         }
         dispatch_async(dispatch_get_main_queue(), ^{
-            NSLog(@"%@ sent!", url);
         });
     });
 }
@@ -108,13 +96,15 @@
     NSMutableString* url = [NSMutableString stringWithFormat:@"http://"];
     [url appendString:IPAddr];
     [url appendString:@"/mdio/currentchannel"];
+    
     NSURL *jsonUrl = [NSURL URLWithString:url];
-    NSError *error = nil; // ??
+    NSError *error = nil;
     NSData *jsonData = [NSData dataWithContentsOfURL:jsonUrl options:kNilOptions error:&error];
     NSMutableDictionary *jsonResponse = [NSJSONSerialization JSONObjectWithData:jsonData options:NSJSONReadingAllowFragments error:&error];
     return [jsonResponse objectForKey:@"label"];
 }
 
+/* Changes the channel. DOES NOT WORK. Problem with the encoding of the channel URL sent. */
 -(void) changeChannel: (NSString*) url {
     dispatch_queue_t queue = dispatch_queue_create("com.yourdomain.yourappname", NULL);
     dispatch_async(queue, ^{
@@ -128,26 +118,21 @@
         //    NSString *test = @"http://192.168.0.198/mdio/launchurl?url=http%3A%2F%2Fdownload.ted.com%2Ftalks%2FTerryMoore_2005-480p.mp4%3Fapikey%3DTEDDOWNLOAD%26contentViewer%3Dbroadcast%26onid%3D1%26tsid%3D1%26sid%3D1003%26nid%3D1%26clid%3D0";
         NSURL *urlTemp = [[NSURL alloc] initWithString:urlFirst];
         
-        NSLog(@"SEND : %@",urlFirst);
+        NSLog(@"URL Sent:  %@",urlFirst);
         NSString* response = [[NSString alloc] initWithData:[NSData dataWithContentsOfURL:urlTemp] encoding: NSASCIIStringEncoding];
-        NSLog(@"RESP : %@", response);
-
         dispatch_async(dispatch_get_main_queue(), ^{
+            NSLog(@"Response: %@", response);
         });
     });
     }
 
-
+/* Returns the current IP address */
 -(NSString*) getIPAddress {
     return IPAddr;
 }
 
+/* Sets the IP address. */
 -(void) setIPAddress: (NSString*) IPAddress {
-//    NSLog(@"IPAddress = %@", IPAddress);
     IPAddr = IPAddress;
 }
-
-
-
-
 @end

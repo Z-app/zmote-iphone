@@ -79,10 +79,10 @@
                 }
                 break;
             }
-            NSLog(@"Unknown id=%d", button.tag);
+            NSLog(@"Unknown id %d", button.tag);
             break;
     }
-    if (doRequest) {
+    if (doRequest) { // If it's not a channel
         [zenterio sendRequest:command];
     }
 }
@@ -110,17 +110,15 @@
     return channelList;
 }
 
-/* A task. */
+/* A task. Does nothing. */
 -(void) aTask {
-//    [zenterio URLRequest];
 }
 
-/* Returns current channel */
+/* Returns the current channel */
 - (void) getCurrentChannel {
     NSString* label = [zenterio getCurrentChannel];
     for (VChannel* channel in channelList) {
         if ([[channel getName] isEqualToString:label]) {
-            NSLog(@"Current channel=%@", [channel getName]);
             if ([[currentChannel getName] isEqualToString:label]) {
             } else {
                 [[channel getIcon] setBackgroundColor:[UIColor whiteColor]];
@@ -133,14 +131,14 @@
     NSLog(@"No current channel found");
 }
 
-/* Changes the currentChannel in the app as well as changing background color of the channels affected */
+/* Changes the currentChannel in the app as well as changing the background color of the channels affected */
 -(void) changeChannel: (VChannel*) channel {
     [[currentChannel getIcon] setBackgroundColor:[UIColor clearColor]];
-    NSLog(@"Current channel: %@", [currentChannel getName]);
     [[channel getIcon] setBackgroundColor:[UIColor whiteColor]];
     currentChannel = channel;
     [zenterio changeChannel:[channel getURL]]; // This function doesn't work.
 }
+
 
 -(NSString*) getIPAddress {
     return [zenterio getIPAddress];
@@ -152,7 +150,7 @@
 -(float) getVolume {
     return [zenterio getVolume];
 }
--(void) setValue: (float) val {
+-(void) setVolume: (float) val {
 //    [zenterio setVolume];
 }
 

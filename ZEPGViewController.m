@@ -26,19 +26,6 @@
         [label setTextColor: [UIColor whiteColor]];
         [label setBackgroundColor: [UIColor clearColor]];
         [self.view addSubview: label];
-        
-        /* The top bar, above tabbed bar */
-        UIView* topFrame = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 35)];
-        topFrame.backgroundColor = [UIColor blackColor];
-        [self.view addSubview: topFrame];
-        
-        NSInteger topLineThickness = 2;
-        UIView* topLine = [[UIView alloc] initWithFrame:CGRectMake(0,topFrame.frame.size.height - topLineThickness, topFrame.frame.size.width, topLineThickness)];
-        topLine.backgroundColor = RGBCOLOR(48, 180, 224);
-        [topFrame addSubview:topLine];
-
-        
-         
     }
     return self;
 }
@@ -54,8 +41,6 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
-// New shit
 
 - (NSString *)iconImageName {
 	return @"3_epg_s.png" ;

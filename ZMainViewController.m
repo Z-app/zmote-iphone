@@ -21,6 +21,7 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         self.view.backgroundColor = [UIColor blackColor];
+        
         /* Label */
         CGRect labelFrame = CGRectMake( 0, 0, 100, 30 );
         UILabel* label = [[UILabel alloc] initWithFrame: labelFrame];
@@ -28,18 +29,6 @@
         [label setTextColor: [UIColor whiteColor]];
         [label setBackgroundColor: [UIColor clearColor]];
         [self.view addSubview: label];
-        
-        
-        /* The top bar, above tabbed bar */
-        UIView* topFrame = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 35)];
-        topFrame.backgroundColor = [UIColor blackColor];
-        [self.view addSubview: topFrame];
-        
-        NSInteger topLineThickness = 2;
-        UIView* topLine = [[UIView alloc] initWithFrame:CGRectMake(0,topFrame.frame.size.height - topLineThickness, topFrame.frame.size.width, topLineThickness)];
-        topLine.backgroundColor = RGBCOLOR(48, 180, 224);
-        [topFrame addSubview:topLine];
-        
         
     }
     return self;
@@ -49,9 +38,6 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    
-   
-//    return ;
 }
 
 - (void)didReceiveMemoryWarning
@@ -59,8 +45,6 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
-// New shit
 
 - (NSString *)iconImageName {
 	return @"1_main_view_s.png" ;

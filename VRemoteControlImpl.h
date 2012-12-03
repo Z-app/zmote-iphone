@@ -26,5 +26,6 @@
 -(NSString*) getIPAddress;
 -(void) setIPAddress:(NSString*) IPAddress;
 -(float) getVolume;
+-(void) setVolume: (float) val;
 
 @end

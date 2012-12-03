@@ -176,7 +176,6 @@
         volumeSlider.tag = 110;
         [topFrame addSubview:volumeSlider];
         
-        
         /* Text field for the STB IP Address */ 
         STBIPaddress = [[UITextField alloc] initWithFrame:CGRectMake(0, 6, self.view.frame.size.width/3, 20)];
         [STBIPaddress setBackgroundColor:[UIColor blackColor]];
@@ -184,11 +183,9 @@
         STBIPaddress.font = [UIFont systemFontOfSize:14.0];
         STBIPaddress.autocorrectionType = UITextAutocorrectionTypeYes;
         STBIPaddress.keyboardType = UIKeyboardTypeDefault;
-//        STBIPaddress.clearButtonMode = UITextFieldViewModeWhileEditing;
         [STBIPaddress setUserInteractionEnabled:YES];
         STBIPaddress.placeholder = @"STB";
         STBIPaddress.tag = 300;
-//        STBIPaddress.delegate = self;
         [topFrame addSubview:STBIPaddress];
         [STBIPaddress setText:[remoteControl getIPAddress]];
         [STBIPaddress setKeyboardType:UIKeyboardTypeDecimalPad];
@@ -197,7 +194,7 @@
     return self;
 }
 
-// Test function
+// Test function. Not used
 -(void) setActiveChannel {
     dispatch_queue_t queue = dispatch_queue_create("com.yourdomain.yourappname", NULL);
     dispatch_async(queue, ^{
@@ -235,25 +232,21 @@
         objectTag++;
         x += img.size.width*scale;
     }
-    NSLog(@"x=%d",x);
     channelScrollView.contentSize = CGSizeMake( x - objectSpace, channelScrollView.frame.size.height);
     
 
 }
 
-
-//Default function
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
+// Temp function.
 - (void) buttonClicked: (id)sender {
     NSLog( @"Button clicked.");
 }
-
-// New shit
 
 - (NSString *)iconImageName {
 	return @"2_remote_control_s.png" ;
@@ -265,7 +258,6 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    Active = YES;
     NSLog(@"viewWillAppear");
 }
 
@@ -273,13 +265,11 @@
     [super viewDidAppear:animated];
 //    [remoteControl getCurrentChannel];
 //    volumeSlider.value = [remoteControl getVolume];
-//    [self updater];
     NSLog(@"viewDidAppear");
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
-    Active = NO;
     NSLog(@"viewWillDisappear");
 }
 
@@ -288,35 +278,18 @@
     NSLog(@"viewDidDisappear");
 }
 
-/* To remove the keyboard when pressing outside the text field */
+/* Removes the keyboard when pressing outside the text field */
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
-//    NSLog(@"touchesBegan:withEvent:");
     [self.view endEditing:YES];
     [remoteControl setIPAddress:STBIPaddress.text];
     [super touchesBegan:touches withEvent:event];
 }
 
+/* Should set the volume when sliding. Is not correctly implemented. */
 -(void) sliderAction: (id) sender {
-//    NSLog(@"LOL+%f", volumeSlider.value);
 //    [remoteControl setVolume:volumeSlider.value];
 }
 
-//-(void) updater {
-//    dispatch_queue_t queue = dispatch_queue_create("com.yourdomain.yourappname", NULL);
-//    dispatch_async(queue, ^{
-//        NSLog(@"Listens."); // EXTREMELY UGLY CODE HERE
-//        while(Active) {
-//            [NSThread sleepForTimeInterval:2];
-//            [remoteControl getCurrentChannel];
-//            volumeSlider.value = [remoteControl getVolume];
-//            NSLog(@"%f", [remoteControl getVolume]);
-//            
-//        }
-//        dispatch_async(dispatch_get_main_queue(), ^{
-//            NSLog(@"Stopped.");
-//        });
-//    });
-//}
 
 
 
