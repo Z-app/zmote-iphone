@@ -18,6 +18,7 @@
 - (VRemoteControlImpl*) init {
     zenterio = [[RCCommand_zenterio alloc] init];
     if (self) {
+
         return self;
     } else {
         return nil;
@@ -60,14 +61,25 @@
             break;
         case 107:
             NSLog(@"info");
+            command = @"pinfo";
             break;
         case 108:
             NSLog(@"cancel");
+            command = @"pexit";
             break;
         case 109:
             NSLog(@"mute");
             command = @"pmute";
             break;
+        case 110:
+            if (lastSliderValue < currentSliderValue) {
+                command = @"pvolplus";
+            } else if (lastSliderValue > currentSliderValue) {
+                command = @"pvolminus";
+            } else {
+                doRequest = false;
+            }
+            break;            
         default:
             if (button.tag >= 200 && button.tag <= 299) { /* If it's a channel */
                 for (VChannel* channel in channelList) {
@@ -114,21 +126,27 @@
 -(void) aTask {
 }
 
-/* Returns the current channel */
+/* Changes the current channel */
 - (void) getCurrentChannel {
-    NSString* label = [zenterio getCurrentChannel];
-    for (VChannel* channel in channelList) {
-        if ([[channel getName] isEqualToString:label]) {
-            if ([[currentChannel getName] isEqualToString:label]) {
-            } else {
-                [[channel getIcon] setBackgroundColor:[UIColor whiteColor]];
-                [[currentChannel getIcon] setBackgroundColor: [UIColor clearColor]];
-                currentChannel = channel;
+    dispatch_queue_t queue = dispatch_queue_create("com.yourdomain.yourappname", NULL);
+    dispatch_async(queue, ^{
+        NSString* label = [zenterio getCurrentChannel];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            for (VChannel* channel in channelList) {
+                if ([[channel getName] isEqualToString:label]) {
+                    if ([[currentChannel getName] isEqualToString:label]) {
+                    } else {
+                        [[channel getIcon] setBackgroundColor:[UIColor whiteColor]];
+                        [[currentChannel getIcon] setBackgroundColor: [UIColor clearColor]];
+                        currentChannel = channel;
+                    }
+                    return;
+                }
             }
-            return;
-        }
-    }
-    NSLog(@"No current channel found");
+            NSLog(@"No current channel found");
+        });
+    });
+    
 }
 
 /* Changes the currentChannel in the app as well as changing the background color of the channels affected */
@@ -136,7 +154,12 @@
     [[currentChannel getIcon] setBackgroundColor:[UIColor clearColor]];
     [[channel getIcon] setBackgroundColor:[UIColor whiteColor]];
     currentChannel = channel;
-    [zenterio changeChannel:[channel getURL]]; // This function doesn't work.
+    dispatch_queue_t queue = dispatch_queue_create("com.yourdomain.yourappname", NULL);
+    dispatch_async(queue, ^{
+        [zenterio changeChannel:[channel getURL]];
+        dispatch_async(dispatch_get_main_queue(), ^{
+        });
+    });
 }
 
 
@@ -145,13 +168,39 @@
 }
 
 -(void) setIPAddress: (NSString*) IPAddress{
+    NSLog(@"set ip 1");
     [zenterio setIPAddress:IPAddress];
 }
--(float) getVolume {
-    return [zenterio getVolume];
+
+-(void) updateVolume: (UISlider*) slider {
+    dispatch_queue_t queue = dispatch_queue_create("com.yourdomain.yourappname", NULL);
+    dispatch_async(queue, ^{
+        float vol = [zenterio getVolume];
+        lastSliderValue = vol;
+        [slider setValue:vol];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            NSLog(@"zenterio vol = %f", vol);
+        });
+    });
 }
--(void) setVolume: (float) val {
-//    [zenterio setVolume];
+
+
+/* Fullösning på volymen */
+-(void) setVolume: (id) sender value: (float) val {
+    currentSliderValue = val;
+    int range;
+    if (currentSliderValue > lastSliderValue) {
+        range = (int) (currentSliderValue - lastSliderValue) / 5;
+    } else {
+        range = (int) (lastSliderValue - currentSliderValue) / 5;
+    }
+    NSLog(@"range=%d", range);
+    for (int i = 0;i < range + 1; i++) {
+        [self executeCommand:sender];
+    }
+    lastSliderValue = val;
 }
+
+
 
 @end

@@ -30,7 +30,6 @@
 		D1132EA4166B47D3008AB231 /* Back_pressed.png in Resources */ = {isa = PBXBuildFile; fileRef = D1132E79166B47D3008AB231 /* Back_pressed.png */; };
 		D1132EA5166B47D3008AB231 /* Cancel_normal.png in Resources */ = {isa = PBXBuildFile; fileRef = D1132E7A166B47D3008AB231 /* Cancel_normal.png */; };
 		D1132EA6166B47D3008AB231 /* Cancel_pressed.png in Resources */ = {isa = PBXBuildFile; fileRef = D1132E7B166B47D3008AB231 /* Cancel_pressed.png */; };
-		D1132EA7166B47D3008AB231 /* Info_Normal.png in Resources */ = {isa = PBXBuildFile; fileRef = D1132E7C166B47D3008AB231 /* Info_Normal.png */; };
 		D1132EA8166B47D3008AB231 /* Info_pressed.png in Resources */ = {isa = PBXBuildFile; fileRef = D1132E7D166B47D3008AB231 /* Info_pressed.png */; };
 		D1132EA9166B47D3008AB231 /* Mute_normal.png in Resources */ = {isa = PBXBuildFile; fileRef = D1132E7E166B47D3008AB231 /* Mute_normal.png */; };
 		D1132EAA166B47D3008AB231 /* Mute_pressed.png in Resources */ = {isa = PBXBuildFile; fileRef = D1132E7F166B47D3008AB231 /* Mute_pressed.png */; };
@@ -57,6 +56,7 @@
 		D1132EBF166B47D3008AB231 /* 5_sd_card_s@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D1132E96166B47D3008AB231 /* 5_sd_card_s@2x.png */; };
 		D1132EC0166B47D3008AB231 /* selectedtab_s.png in Resources */ = {isa = PBXBuildFile; fileRef = D1132E97166B47D3008AB231 /* selectedtab_s.png */; };
 		D1132EC1166B47D3008AB231 /* selectedtab_s@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D1132E98166B47D3008AB231 /* selectedtab_s@2x.png */; };
+		D1253EA01672329A00DEF56A /* Info_normal2.png in Resources */ = {isa = PBXBuildFile; fileRef = D1253E9F1672329A00DEF56A /* Info_normal2.png */; };
 		D1B17FD6166D4E2C00C3DB5B /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D1B17FD5166D4E2C00C3DB5B /* Default-568h@2x.png */; };
 		D1DBAC64166C1C0D00EC1E26 /* Zmote-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D1DBAC63166C1C0D00EC1E26 /* Zmote-Info.plist */; };
 		D35297821285834A00CC4AE1 /* UINavigationController+icons.m in Sources */ = {isa = PBXBuildFile; fileRef = D35297811285834A00CC4AE1 /* UINavigationController+icons.m */; };
@@ -128,7 +128,6 @@
 		D1132E79166B47D3008AB231 /* Back_pressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Back_pressed.png; sourceTree = "<group>"; };
 		D1132E7A166B47D3008AB231 /* Cancel_normal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Cancel_normal.png; sourceTree = "<group>"; };
 		D1132E7B166B47D3008AB231 /* Cancel_pressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Cancel_pressed.png; sourceTree = "<group>"; };
-		D1132E7C166B47D3008AB231 /* Info_Normal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Info_Normal.png; sourceTree = "<group>"; };
 		D1132E7D166B47D3008AB231 /* Info_pressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Info_pressed.png; sourceTree = "<group>"; };
 		D1132E7E166B47D3008AB231 /* Mute_normal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Mute_normal.png; sourceTree = "<group>"; };
 		D1132E7F166B47D3008AB231 /* Mute_pressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Mute_pressed.png; sourceTree = "<group>"; };
@@ -155,6 +154,8 @@
 		D1132E96166B47D3008AB231 /* 5_sd_card_s@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "5_sd_card_s@2x.png"; sourceTree = "<group>"; };
 		D1132E97166B47D3008AB231 /* selectedtab_s.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = selectedtab_s.png; sourceTree = "<group>"; };
 		D1132E98166B47D3008AB231 /* selectedtab_s@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "selectedtab_s@2x.png"; sourceTree = "<group>"; };
+		D1253E9F1672329A00DEF56A /* Info_normal2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Info_normal2.png; sourceTree = "<group>"; };
+		D18B07B5166F881500D8627D /* Zmote copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Zmote copy-Info.plist"; path = "/Users/viktordahl/Dropbox/Skola/Programmering/objective-c/Zmote-iphone/Zmote copy-Info.plist"; sourceTree = "<absolute>"; };
 		D1B17FD5166D4E2C00C3DB5B /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		D1DBAC63166C1C0D00EC1E26 /* Zmote-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Zmote-Info.plist"; sourceTree = "<group>"; };
 		D2AAC07E0554694100DB518D /* libBCTabBarController.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libBCTabBarController.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -171,7 +172,7 @@
 		D3B2F6C612855CAC0089B15B /* BCTabBarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BCTabBarView.m; sourceTree = "<group>"; };
 		D3B2F72C12855CF10089B15B /* UIViewController+iconImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+iconImage.h"; sourceTree = "<group>"; };
 		D3B2F72D12855CF10089B15B /* UIViewController+iconImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+iconImage.m"; sourceTree = "<group>"; };
-		D3B2F77712855E1B0089B15B /* Zmote-iphone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Zmote-iphone.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D3B2F77712855E1B0089B15B /* Zmote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Zmote.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3B2F78912855F090089B15B /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		D3B2F7F112855F460089B15B /* EXAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EXAppDelegate.h; sourceTree = "<group>"; };
 		D3B2F7F212855F460089B15B /* EXAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EXAppDelegate.m; sourceTree = "<group>"; };
@@ -216,7 +217,7 @@
 			isa = PBXGroup;
 			children = (
 				D2AAC07E0554694100DB518D /* libBCTabBarController.a */,
-				D3B2F77712855E1B0089B15B /* Zmote-iphone.app */,
+				D3B2F77712855E1B0089B15B /* Zmote.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -247,6 +248,7 @@
 				D1132E63166B474E008AB231 /* ZFileHandlerViewController.h */,
 				D1132E64166B474E008AB231 /* ZFileHandlerViewController.m */,
 				D1DBAC63166C1C0D00EC1E26 /* Zmote-Info.plist */,
+				D18B07B5166F881500D8627D /* Zmote copy-Info.plist */,
 			);
 			name = BCTabBarController;
 			sourceTree = "<group>";
@@ -304,7 +306,6 @@
 				D1132E79166B47D3008AB231 /* Back_pressed.png */,
 				D1132E7A166B47D3008AB231 /* Cancel_normal.png */,
 				D1132E7B166B47D3008AB231 /* Cancel_pressed.png */,
-				D1132E7C166B47D3008AB231 /* Info_Normal.png */,
 				D1132E7D166B47D3008AB231 /* Info_pressed.png */,
 				D1132E7E166B47D3008AB231 /* Mute_normal.png */,
 				D1132E7F166B47D3008AB231 /* Mute_pressed.png */,
@@ -314,6 +315,7 @@
 				D1132E83166B47D3008AB231 /* Social_pressed.png */,
 				D1132E84166B47D3008AB231 /* Unmute_normal.png */,
 				D1132E85166B47D3008AB231 /* Unmute_pressed.png */,
+				D1253E9F1672329A00DEF56A /* Info_normal2.png */,
 			);
 			path = remote_control_lower_buttons;
 			sourceTree = "<group>";
@@ -471,7 +473,7 @@
 			);
 			name = Zmote;
 			productName = Example;
-			productReference = D3B2F77712855E1B0089B15B /* Zmote-iphone.app */;
+			productReference = D3B2F77712855E1B0089B15B /* Zmote.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -527,7 +529,6 @@
 				D1132EA4166B47D3008AB231 /* Back_pressed.png in Resources */,
 				D1132EA5166B47D3008AB231 /* Cancel_normal.png in Resources */,
 				D1132EA6166B47D3008AB231 /* Cancel_pressed.png in Resources */,
-				D1132EA7166B47D3008AB231 /* Info_Normal.png in Resources */,
 				D1132EA8166B47D3008AB231 /* Info_pressed.png in Resources */,
 				D1132EA9166B47D3008AB231 /* Mute_normal.png in Resources */,
 				D1132EAA166B47D3008AB231 /* Mute_pressed.png in Resources */,
@@ -556,6 +557,7 @@
 				D1132EC1166B47D3008AB231 /* selectedtab_s@2x.png in Resources */,
 				D1DBAC64166C1C0D00EC1E26 /* Zmote-Info.plist in Resources */,
 				D1B17FD6166D4E2C00C3DB5B /* Default-568h@2x.png in Resources */,
+				D1253EA01672329A00DEF56A /* Info_normal2.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -681,7 +683,7 @@
 					"-framework",
 					UIKit,
 				);
-				PRODUCT_NAME = "Zmote-iphone";
+				PRODUCT_NAME = Zmote;
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -704,7 +706,7 @@
 					"-framework",
 					UIKit,
 				);
-				PRODUCT_NAME = "Zmote-iphone";
+				PRODUCT_NAME = Zmote;
 				SDKROOT = iphoneos;
 				ZERO_LINK = NO;
 			};

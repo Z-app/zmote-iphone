@@ -17,10 +17,13 @@
     UITextField * STBIPaddress;
     UISlider* volumeSlider;
     BOOL Active;
+    float lastSliderValue;
+    BOOL channelViewLoaded;
 
 }
 
 -(void) setActiveChannel;
 -(void) sliderAction: (id) sender;
+
 
 @end

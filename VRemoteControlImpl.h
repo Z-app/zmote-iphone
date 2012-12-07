@@ -14,6 +14,9 @@
     RCCommand_zenterio* zenterio;
     NSMutableArray* channelList;
     VChannel* currentChannel;
+    
+    float lastSliderValue;
+    float currentSliderValue;
 }
 
 - (VRemoteControlImpl*) init;
@@ -25,7 +28,8 @@
 -(void) changeChannel: (VChannel*) channel;
 -(NSString*) getIPAddress;
 -(void) setIPAddress:(NSString*) IPAddress;
--(float) getVolume;
--(void) setVolume: (float) val;
+-(void) updateVolume: (UISlider*) slider;
+-(void) setVolume: (id) sender value: (float) val;
+
 
 @end

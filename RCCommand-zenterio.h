@@ -21,5 +21,6 @@
 -(void) changeChannel: (NSString*) url;
 -(NSString*) getIPAddress;
 -(void) setIPAddress: (NSString*) IPAddress;
+-(void) setVolume: (float) val;
 
 @end

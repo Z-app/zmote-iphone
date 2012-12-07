@@ -37,7 +37,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+
 }
 
 - (void)didReceiveMemoryWarning
@@ -61,6 +61,8 @@
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
+    
+    [STBIPaddress setText:[remoteControl getIPAddress]];
     NSLog(@"viewDidAppear");
 }
 
@@ -73,6 +75,5 @@
     [super viewDidDisappear:animated];
     NSLog(@"viewDidDisappear");
 }
-
 
 @end

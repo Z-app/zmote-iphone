@@ -11,6 +11,7 @@
 @class VRemoteControlImpl;
 
 @interface ZMainViewController : UIViewController {
-    
+    VRemoteControlImpl* remoteControl;
+    UITextField * STBIPaddress;
 }
 @end
